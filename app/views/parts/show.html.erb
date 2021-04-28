@@ -1,0 +1,14 @@
+<h2>Parts</h2>
+<br>
+<ul>
+  <% @parts.each do |part| %>
+    <% if part.user_id == session[:user_id] %>
+    <li><a href="/parts/<%=part.id%>/edit"><%= part.brand_name %> - <%= part.part_name %></a> <a href="/parts/<%=part.id%>/delete"> [x]</a></li> 
+    
+    <% end %>
+  <% end %>
+</ul>
+<br></br> 
+<a href="/parts/new">Create a new part</a>
+<br></br>
+<a href="/logout">Logout</a>
